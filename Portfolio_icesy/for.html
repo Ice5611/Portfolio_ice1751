@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio • [ชื่อของคุณ]</title>
+  <link rel="stylesheet" href="faa.css" />
+  <meta name="description" content="ผลงานและโปรไฟล์ของ [ชื่อของคุณ] - Frontend/Developer" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">[YourName]</div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" aria-label="Toggle theme" id="themeToggle">🌓</button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img class="avatar" src="1.jpg.jfif" alt="รูปโปรไฟล์ [ชื่อของคุณ]" />
+    <div>
+      <h1>สวัสดีค่ะ ฉันชื่อ <span>[นางสาว พัชญา เอี่ยมสุวรรณใส]</span></h1>
+      <p class="subtitle">Frontend Developer • Web Designer</p>
+      <div class="cta">
+        <a class="btn" href="#projects">ดูผลงาน</a>
+        <button class="btn ghost" onclick="sayHi()">ทักทาย 👋</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <h2>About</h2>
+    <p>
+      ชอบสร้างเว็บที่ทั้งสวยและใช้งานง่าย เน้น HTML, CSS, JavaScript
+      และปรับแต่ง UI/UX ให้เหมาะกับผู้ใช้จริง ๆ
+    </p>
+    <ul class="chips">
+      <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Responsive</li><li>Accessibility</li>
+    </ul>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <!-- ฟิลเตอร์หมวดหมู่ -->
+    <div class="filters" role="tablist" aria-label="Project filters">
+      <button class="filter active" data-filter="all">รวม</button>
+      <button class="filter" data-filter="website">เข้ารวมกิจกรรม</button>
+      <button class="filter" data-filter="ui">เข้ารวมแอดไวซ์</button>
+      <button class="filter" data-filter="tool">ตัดต่อวิดีโอ</button>
+    </div>
+
+    <!-- กริดโปรเจกต์ (จะถูกเติมด้วย JS) -->
+    <div id="projectGrid" class="grid"></div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <a class="card link" href="mailto:email@example.com">📧 email@example.com</a>
+      <a class="card link" href="https://m.me/yourname" target="_blank" rel="noopener">💬 Messenger</a>
+      <a class="card link" href="https://github.com/yourname" target="_blank" rel="noopener">💻 GitHub</a>
+      <a class="card link" href="https://www.instagram.com/yourname" target="_blank" rel="noopener">📷 Instagram</a>
+    </div>
+  </section>
+
+  <footer class="footer">© 2025 [YourName] — Built with HTML • CSS • JS</footer>
+
+  <!-- Modal แสดงรายละเอียดโปรเจกต์ -->
+  <dialog id="projectModal" class="modal">
+    <form method="dialog">
+      <button class="modal-close" aria-label="Close">✕</button>
+    </form>
+    <div class="modal-body">
+      <img id="modalCover" class="modal-cover" alt="ภาพปกโปรเจกต์" />
+      <div class="modal-content">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <div class="modal-actions">
+          <a id="demoLink" class="btn" target="_blank" rel="noopener">ดูตัวอย่างจริง</a>
+          <a id="repoLink" class="btn ghost" target="_blank" rel="noopener">ดูโค้ดบน GitHub</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="co.js"></script>
+</body>
+</html>

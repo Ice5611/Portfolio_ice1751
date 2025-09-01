@@ -1,0 +1,108 @@
+:root{
+  --bg:#0f1220; --card:#151a2e; --text:#e8ebff; --muted:#aab2d5;
+  --primary:#6ea8fe; --accent:#c084fc; --ring:rgba(110,168,254,.35);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui, "Prompt", sans-serif;
+  background: radial-gradient(1200px 600px at 20% -10%, #1a1f3b 0%, transparent 60%),
+              radial-gradient(1200px 800px at 120% 10%, #231b47 0%, transparent 60%),
+              var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* Header */
+.site-header{
+  position: sticky; top:0; z-index:10;
+  display:flex; gap:16px; align-items:center; justify-content:space-between;
+  padding:14px 20px; background:rgba(15,18,32,.6); backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.06)
+}
+.brand{font-weight:700; letter-spacing:.5px}
+.nav a{color:var(--muted); text-decoration:none; margin:0 10px}
+.nav a:hover{color:var(--text)}
+.theme-toggle{background:transparent;border:1px solid rgba(255,255,255,.12);
+  color:var(--text); padding:6px 10px; border-radius:10px; cursor:pointer}
+
+/* Hero */
+.hero{
+  display:grid; grid-template-columns: 120px 1fr; gap:18px; align-items:center;
+  padding:40px 20px; max-width:980px; margin:0 auto;
+}
+.avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--primary)}
+.hero h1{margin:0}
+.subtitle{color:var(--muted); margin-top:6px}
+.cta{display:flex; gap:10px; margin-top:14px}
+.btn{
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border:none; color:#0c0f1c; font-weight:700; padding:10px 16px; border-radius:12px;
+  cursor:pointer; text-decoration:none; display:inline-block;
+  box-shadow:0 6px 20px var(--ring)
+}
+.btn.ghost{
+  background:transparent; color:var(--text);
+  border:1px solid rgba(255,255,255,.15)
+}
+.btn:hover{transform: translateY(-1px)}
+
+/* Sections */
+.section{max-width:980px; margin:0 auto; padding:42px 20px}
+.section h2{margin:0 0 14px; font-size:1.6rem}
+.chips{list-style:none; display:flex; flex-wrap:wrap; gap:8px; padding:0; margin:12px 0 0}
+.chips li{
+  background:rgba(255,255,255,.06); padding:6px 10px; border-radius:999px; color:var(--muted);
+  border:1px solid rgba(255,255,255,.08)
+}
+
+/* Filters */
+.filters{display:flex; gap:10px; margin:14px 0 18px; flex-wrap:wrap}
+.filter{
+  background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.15);
+  padding:6px 12px; border-radius:10px; cursor:pointer
+}
+.filter.active, .filter:hover{border-color: var(--primary); box-shadow:0 0 0 4px var(--ring)}
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap:16px;
+}
+.card{
+  background: var(--card); border:1px solid rgba(255,255,255,.07);
+  border-radius:16px; overflow:hidden; transition: transform .15s ease;
+}
+.card:hover{transform: translateY(-4px)}
+.card img{width:100%; height:150px; object-fit:cover; display:block}
+.card .card-body{padding:12px 14px}
+.card .title{font-weight:700; margin:0 0 6px}
+.card .desc{color:var(--muted); font-size:.95rem; margin:0 0 10px}
+.card .tags{display:flex; flex-wrap:wrap; gap:6px}
+.tag{font-size:.8rem; color:var(--muted); border:1px solid rgba(255,255,255,.12); padding:3px 8px; border-radius:999px}
+
+/* Contact */
+.contact-grid{display:grid; gap:12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+}
+.link{display:block; text-decoration:none; color:var(--text); text-align:center; padding:16px; border-radius:14px; background:var(--card); border:1px solid rgba(255,255,255,.08)}
+.link:hover{border-color:var(--primary); box-shadow:0 0 0 6px var(--ring)}
+
+/* Footer */
+.footer{text-align:center; color:var(--muted); padding:30px 12px}
+
+/* Modal */
+.modal{border:none; border-radius:16px; padding:0; max-width:960px; width:95%}
+.modal::backdrop{background: rgba(0,0,0,.6)}
+.modal-body{display:grid; grid-template-columns: 1fr 1fr; gap:0}
+.modal-cover{width:100%; height:100%; object-fit:cover}
+.modal-content{padding:18px}
+.modal-actions{display:flex; gap:10px; margin-top:14px}
+.modal-close{position:absolute; top:8px; right:8px; background:transparent; border:none; font-size:18px; color:#fff; cursor:pointer}
+
+@media (max-width:700px){
+  .hero{grid-template-columns: 1fr; text-align:center}
+  .avatar{justify-self:center}
+  .modal-body{grid-template-columns: 1fr}
+}
