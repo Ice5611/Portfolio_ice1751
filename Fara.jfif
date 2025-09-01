@@ -1,0 +1,9 @@
+portfolio/
+│── index.html
+│── style.css
+│── script.js
+│── profile.jfif        ← รูปโปรไฟล์ของคุณ (นามสกุล .jfif)
+│── assets/
+│    ├─ proj1.jfif      ← ปกโปรเจกต์ (เปลี่ยนเป็นรูปของคุณ)
+│    ├─ proj2.jfif
+│    └─ proj3.jfif
